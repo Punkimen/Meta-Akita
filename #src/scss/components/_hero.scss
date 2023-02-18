@@ -1,0 +1,86 @@
+.hero {
+
+  &__wrapper {
+    position: relative;
+
+  }
+
+  &__content {
+    width: 37.60vw;
+    min-width: 420px;
+
+    @media(min-width: 1921px) {
+      max-width: 722px;
+      width: 100%;
+    }
+
+    @media(max-width:$md3) {
+      width: 100%;
+      margin-bottom: 50px;
+      min-width: auto;
+    }
+  }
+
+  &__title {}
+
+  &__text {
+    max-width: 580px;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  &__btns {
+    display: flex;
+
+    @media(max-width:$md5) {
+      display: block;
+    }
+  }
+
+  &__btns-btn {
+    @media(max-width:$md5) {
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      margin-right: 35px;
+
+      @media(max-width:$md5) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 3.75vw;
+    right: 0;
+
+    @media(max-width:$md3) {
+      position: relative;
+      top: 0;
+      left: -10%;
+      margin: 0 auto;
+      max-width: 568px;
+      width: 100%;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.container {}
+
+.title {}
+
+.main-text {}
+
+.btn {
+
+  &_transparent {}
+}

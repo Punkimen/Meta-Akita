@@ -1,0 +1,254 @@
+$md1: 1440px;
+$md2: 1200px;
+$md3: 992px;
+$md4: 767px;
+$md5: 568px;
+$md6: 412px;
+$gradient: linear-gradient(96.91deg, #9A68FE 4.03%, #FF23CF 92.96%);
+
+:root {
+    --color-white: #FFFFFF;
+    --color-black: #0D0D0D;
+    --color-gray: #555555;
+    --color-violet: #9A68FE;
+}
+
+html,
+body {
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--color-black);
+    color: var(--color-white);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5em;
+    overflow-x: hidden;
+    position: relative;
+
+    @media(max-width:$md5) {
+        font-size: 16px;
+    }
+
+    &.overlay {
+        height: 100vh;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: fixed;
+            background: rgba(0, 0, 0, 0.5);
+            left: 0;
+            top: 123px;
+            height: 100vh;
+            width: 100vw;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+    }
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 0 15px;
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.title {
+    font-weight: 600;
+}
+
+h1.title {
+    font-size: 72px;
+    line-height: 1.25em;
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    @media(max-width:$md4) {
+        font-size: 48px;
+    }
+}
+
+h2.title {
+    font-size: 48px;
+    line-height: 1.2em;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    @media(max-width:$md4) {
+        font-size: 32px;
+    }
+}
+
+h3.title {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1.1em;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    @media(max-width:$md4) {
+        font-size: 24px;
+    }
+}
+
+h4.title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2em;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    @media(max-width:$md4) {
+        font-size: 16px;
+    }
+}
+
+
+
+.main-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5em;
+
+    @media(max-width:$md4) {
+        font-size: 16px;
+    }
+}
+
+.gray-text {
+    color: var(--color-gray)
+}
+
+.gradient-text {
+    background: var(--color-violet);
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+
+.btn {
+    font-family: inherit;
+    background: var(--color-violet);
+    background: $gradient;
+    color: var(--color-white);
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.2em;
+    position: relative;
+    transition: all ease-in-out .3s;
+    padding: 17px 52px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    min-width: 198px;
+    text-align: center;
+    white-space: nowrap;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        background: var(--bg-violet);
+        background: $gradient;
+        z-index: -1;
+        border-radius: 3px;
+    }
+
+    &:hover {
+        background: var(--color-black);
+    }
+
+    &_transparent {
+        background: var(--color-black);
+
+        &:hover {
+            background: var(--color-violet);
+            background: $gradient;
+        }
+    }
+}
+
+.btn-reset {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+section {
+    padding: 70px 0 120px;
+
+    @media(max-width:$md4) {
+        padding: 30px 0 30px;
+    }
+}
+
+.section__header {
+    padding: 26px 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-gray);
+    box-shadow: 0 26px 26px -10px rgb(0 0 0 / 58%);
+    margin-bottom: 174px;
+
+    @media(max-width:$md4) {
+        margin-bottom: 60px;
+    }
+}
